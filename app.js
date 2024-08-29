@@ -25,3 +25,19 @@ function getCurrentDate() {
 
 const currentDate = getCurrentDate();
 console.log(`Day Number: ${currentDate.dayNumber}, Day Name: ${currentDate.dayName}, Month Number: ${currentDate.monthNumber}, Month Name: ${currentDate.monthName}, Year: ${currentDate.year}`);
+
+function getCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    
+    return {
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds
+    };
+}
+
+const currentTime = getCurrentTime();
+console.log(`Hours: ${currentTime.hours}, Minutes: ${currentTime.minutes}, Seconds: ${currentTime.seconds}`);
