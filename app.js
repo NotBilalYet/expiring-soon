@@ -41,3 +41,23 @@ function getCurrentTime() {
 
 const currentTime = getCurrentTime();
 console.log(`Hours: ${currentTime.hours}, Minutes: ${currentTime.minutes}, Seconds: ${currentTime.seconds}`);
+
+function timeToDayEnd() {
+    const now = new Date();
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+    
+    let remainingTime = endOfDay - now;
+    
+    const totalHours = remainingTime / (1000 * 60 * 60);
+    const totalMinutes = remainingTime / (1000 * 60);
+    const totalSeconds = remainingTime / 1000;
+    
+    return {
+        hours: Math.floor(totalHours),
+        minutes: Math.floor(totalMinutes),
+        seconds: Math.floor(totalSeconds)
+    };
+}
+
+const timeLeft = timeToDayEnd();
+console.log(`Time to day end: ${timeLeft.hours} total hours, ${timeLeft.minutes} total minutes, ${timeLeft.seconds} total seconds`);
