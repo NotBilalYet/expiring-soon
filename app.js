@@ -61,3 +61,31 @@ function timeToDayEnd() {
 
 const timeLeft = timeToDayEnd();
 console.log(`Time to day end: ${timeLeft.hours} total hours, ${timeLeft.minutes} total minutes, ${timeLeft.seconds} total seconds`);
+
+function timeToMonthEndTotal() {
+    const now = new Date();
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
+    
+    let remainingTime = endOfMonth - now;
+    
+    const totalDays = remainingTime / (1000 * 60 * 60 * 24);
+    const totalHours = remainingTime / (1000 * 60 * 60);
+    const totalMinutes = remainingTime / (1000 * 60);
+    const totalSeconds = remainingTime / 1000;
+    
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth();
+    const totalDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    
+    return {
+        days: Math.floor(totalDays),
+        hours: Math.floor(totalHours),
+        minutes: Math.floor(totalMinutes),
+        seconds: Math.floor(totalSeconds),
+        totalDaysInMonth: totalDaysInMonth
+    };
+}
+
+const timeToMonthEnd = timeToMonthEndTotal();
+console.log(`Time to month end: ${timeToMonthEnd.days} total days, ${timeToMonthEnd.hours} total hours, ${timeToMonthEnd.minutes} total minutes, ${timeToMonthEnd.seconds} total seconds, Total days in the month: ${timeToMonthEnd.totalDaysInMonth}`);
+
