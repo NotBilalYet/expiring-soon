@@ -89,3 +89,27 @@ function timeToMonthEndTotal() {
 const timeToMonthEnd = timeToMonthEndTotal();
 console.log(`Time to month end: ${timeToMonthEnd.days} total days, ${timeToMonthEnd.hours} total hours, ${timeToMonthEnd.minutes} total minutes, ${timeToMonthEnd.seconds} total seconds, Total days in the month: ${timeToMonthEnd.totalDaysInMonth}`);
 
+function timeToYearEndTotal() {
+    const now = new Date();
+    const endOfYear = new Date(now.getFullYear(), 11, 31, 23, 59, 59, 999);
+    
+    let remainingTime = endOfYear - now;
+    
+    const totalMonths = endOfYear.getMonth() - now.getMonth() + 
+                        (endOfYear.getFullYear() - now.getFullYear()) * 12;
+    const totalDays = remainingTime / (1000 * 60 * 60 * 24);
+    const totalHours = remainingTime / (1000 * 60 * 60);
+    const totalMinutes = remainingTime / (1000 * 60);
+    const totalSeconds = remainingTime / 1000;
+    
+    return {
+        months: totalMonths,
+        days: Math.floor(totalDays),
+        hours: Math.floor(totalHours),
+        minutes: Math.floor(totalMinutes),
+        seconds: Math.floor(totalSeconds)
+    };
+}
+
+const timeToYearEnd = timeToYearEndTotal();
+console.log(`Time to year end: ${timeToYearEnd.months} full months, ${timeToYearEnd.days} total days, ${timeToYearEnd.hours} total hours, ${timeToYearEnd.minutes} total minutes, ${timeToYearEnd.seconds} total seconds`);
