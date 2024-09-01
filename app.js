@@ -1,3 +1,15 @@
+function showTab(tabIndex) {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => button.classList.remove('active'));
+    
+    tabButtons[tabIndex].classList.add('active');
+    
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    document.getElementById(`tab-content-${tabIndex}`).classList.add('active');
+}
+
 function getCurrentDate() {
     const date = new Date();
 
