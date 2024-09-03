@@ -137,3 +137,15 @@ button2.textContent = monthButton;
 const yearButton = `${currentDate.year}`
 const button3 = document.getElementById('yearButton');
 button3.textContent = yearButton;
+
+const dayHoursText = `${timeLeft.hours}`
+const dayHours = document.getElementById('day-hours');
+dayHours.textContent = dayHoursText;
+
+const dayMinutesText = `${timeLeft.minutes}`
+const dayMinutes = document.getElementById('day-minutes');
+dayMinutes.textContent = dayMinutesText;
+
+const daySecondsText = `${timeLeft.seconds}`
+const daySeconds = document.getElementById('day-seconds');
+daySeconds.textContent = daySecondsText;
