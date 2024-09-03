@@ -149,3 +149,19 @@ dayMinutes.textContent = dayMinutesText;
 const daySecondsText = `${timeLeft.seconds}`
 const daySeconds = document.getElementById('day-seconds');
 daySeconds.textContent = daySecondsText;
+
+const monthDaysText = `${timeToMonthEnd.days}`
+const monthDays = document.getElementById('month-days');
+monthDays.textContent = monthDaysText;
+
+const monthHoursText = `${timeToMonthEnd.hours}`
+const monthHours = document.getElementById('month-hours');
+monthHours.textContent = monthHoursText;
+
+const monthMinutesText = `${timeToMonthEnd.minutes}`
+const monthMinutes = document.getElementById('month-minutes');
+monthMinutes.textContent = monthMinutesText;
+
+const monthSecondsText = `${timeToMonthEnd.seconds}`
+const monthSeconds = document.getElementById('month-seconds');
+monthSeconds.textContent = monthSecondsText;
