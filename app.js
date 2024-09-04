@@ -165,3 +165,23 @@ monthMinutes.textContent = monthMinutesText;
 const monthSecondsText = `${timeToMonthEnd.seconds}`
 const monthSeconds = document.getElementById('month-seconds');
 monthSeconds.textContent = monthSecondsText;
+
+const yearMonthsText = `${timeToYearEnd.months}`
+const yearMonths = document.getElementById('year-months');
+yearMonths.textContent = yearMonthsText;
+
+const yearDaysText = `${timeToYearEnd.days}`
+const yearDays = document.getElementById('year-days');
+yearDays.textContent = yearDaysText;
+
+const yearHoursText = `${timeToYearEnd.hours}`
+const yearHours = document.getElementById('year-hours');
+yearHours.textContent = yearHoursText;
+
+const yearMinutesText = `${timeToYearEnd.minutes}`
+const yearMinutes = document.getElementById('year-minutes');
+yearMinutes.textContent = yearMinutesText;
+
+const yearSecondsText = `${timeToYearEnd.seconds}`
+const yearSeconds = document.getElementById('year-seconds');
+yearSeconds.textContent = yearSecondsText;
