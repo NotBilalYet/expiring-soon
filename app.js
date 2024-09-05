@@ -35,9 +35,6 @@ function getCurrentDate() {
     };
 }
 
-const currentDate = getCurrentDate();
-console.log(`Day Number: ${currentDate.dayNumber}, Day Name: ${currentDate.dayName}, Month Number: ${currentDate.monthNumber}, Month Name: ${currentDate.monthName}, Year: ${currentDate.year}`);
-
 function getCurrentTime() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
@@ -50,9 +47,6 @@ function getCurrentTime() {
         seconds: seconds
     };
 }
-
-const currentTime = getCurrentTime();
-console.log(`Hours: ${currentTime.hours}, Minutes: ${currentTime.minutes}, Seconds: ${currentTime.seconds}`);
 
 function timeToDayEnd() {
     const now = new Date();
@@ -70,9 +64,6 @@ function timeToDayEnd() {
         seconds: Math.floor(totalSeconds)
     };
 }
-
-const timeLeft = timeToDayEnd();
-console.log(`Time to day end: ${timeLeft.hours} total hours, ${timeLeft.minutes} total minutes, ${timeLeft.seconds} total seconds`);
 
 function timeToMonthEndTotal() {
     const now = new Date();
@@ -98,9 +89,6 @@ function timeToMonthEndTotal() {
     };
 }
 
-const timeToMonthEnd = timeToMonthEndTotal();
-console.log(`Time to month end: ${timeToMonthEnd.days} total days, ${timeToMonthEnd.hours} total hours, ${timeToMonthEnd.minutes} total minutes, ${timeToMonthEnd.seconds} total seconds, Total days in the month: ${timeToMonthEnd.totalDaysInMonth}`);
-
 function timeToYearEndTotal() {
     const now = new Date();
     const endOfYear = new Date(now.getFullYear(), 11, 31, 23, 59, 59, 999);
@@ -123,8 +111,11 @@ function timeToYearEndTotal() {
     };
 }
 
+const currentDate = getCurrentDate();
+const currentTime = getCurrentTime();
+const timeLeft = timeToDayEnd();
+const timeToMonthEnd = timeToMonthEndTotal();
 const timeToYearEnd = timeToYearEndTotal();
-console.log(`Time to year end: ${timeToYearEnd.months} full months, ${timeToYearEnd.days} total days, ${timeToYearEnd.hours} total hours, ${timeToYearEnd.minutes} total minutes, ${timeToYearEnd.seconds} total seconds`);
 
 const todayButton = `${currentDate.dayName.toUpperCase()} ${currentDate.dayNumber}.${currentDate.monthNumber}.${currentDate.year}`
 const button1 = document.getElementById('todayButton');
