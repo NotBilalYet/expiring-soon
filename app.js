@@ -111,68 +111,31 @@ function timeToYearEndTotal() {
     };
 }
 
-const currentDate = getCurrentDate();
-const currentTime = getCurrentTime();
-const timeLeft = timeToDayEnd();
-const timeToMonthEnd = timeToMonthEndTotal();
-const timeToYearEnd = timeToYearEndTotal();
+function updateDateTime() {
+    const currentDate = getCurrentDate();
+    const currentTime = getCurrentTime();
+    const timeLeft = timeToDayEnd();
+    const timeToMonthEnd = timeToMonthEndTotal();
+    const timeToYearEnd = timeToYearEndTotal();
+    
+    document.getElementById('todayButton').textContent = `${currentDate.dayName.toUpperCase()} ${currentDate.dayNumber}.${currentDate.monthNumber}.${currentDate.year}`;
+    document.getElementById('monthButton').textContent = `${currentDate.monthName.toUpperCase()}`;
+    document.getElementById('yearButton').textContent = `${currentDate.year}`;
 
-const todayButton = `${currentDate.dayName.toUpperCase()} ${currentDate.dayNumber}.${currentDate.monthNumber}.${currentDate.year}`
-const button1 = document.getElementById('todayButton');
-button1.textContent = todayButton;
+    document.getElementById('day-hours').textContent = `${timeLeft.hours}`;
+    document.getElementById('day-minutes').textContent = `${timeLeft.minutes}`;
+    document.getElementById('day-seconds').textContent = `${timeLeft.seconds}`;
+    
+    document.getElementById('month-days').textContent = `${timeToMonthEnd.days}`;
+    document.getElementById('month-hours').textContent = `${timeToMonthEnd.hours}`;
+    document.getElementById('month-minutes').textContent = `${timeToMonthEnd.minutes}`;
+    document.getElementById('month-seconds').textContent = `${timeToMonthEnd.seconds}`;
+    
+    document.getElementById('year-months').textContent = `${timeToYearEnd.months}`;
+    document.getElementById('year-days').textContent = `${timeToYearEnd.days}`;
+    document.getElementById('year-hours').textContent = `${timeToYearEnd.hours}`;
+    document.getElementById('year-minutes').textContent = `${timeToYearEnd.minutes}`;
+    document.getElementById('year-seconds').textContent = `${timeToYearEnd.seconds}`;
+}
 
-const monthButton = `${currentDate.monthName.toUpperCase()}`
-const button2 = document.getElementById('monthButton');
-button2.textContent = monthButton;
-
-const yearButton = `${currentDate.year}`
-const button3 = document.getElementById('yearButton');
-button3.textContent = yearButton;
-
-const dayHoursText = `${timeLeft.hours}`
-const dayHours = document.getElementById('day-hours');
-dayHours.textContent = dayHoursText;
-
-const dayMinutesText = `${timeLeft.minutes}`
-const dayMinutes = document.getElementById('day-minutes');
-dayMinutes.textContent = dayMinutesText;
-
-const daySecondsText = `${timeLeft.seconds}`
-const daySeconds = document.getElementById('day-seconds');
-daySeconds.textContent = daySecondsText;
-
-const monthDaysText = `${timeToMonthEnd.days}`
-const monthDays = document.getElementById('month-days');
-monthDays.textContent = monthDaysText;
-
-const monthHoursText = `${timeToMonthEnd.hours}`
-const monthHours = document.getElementById('month-hours');
-monthHours.textContent = monthHoursText;
-
-const monthMinutesText = `${timeToMonthEnd.minutes}`
-const monthMinutes = document.getElementById('month-minutes');
-monthMinutes.textContent = monthMinutesText;
-
-const monthSecondsText = `${timeToMonthEnd.seconds}`
-const monthSeconds = document.getElementById('month-seconds');
-monthSeconds.textContent = monthSecondsText;
-
-const yearMonthsText = `${timeToYearEnd.months}`
-const yearMonths = document.getElementById('year-months');
-yearMonths.textContent = yearMonthsText;
-
-const yearDaysText = `${timeToYearEnd.days}`
-const yearDays = document.getElementById('year-days');
-yearDays.textContent = yearDaysText;
-
-const yearHoursText = `${timeToYearEnd.hours}`
-const yearHours = document.getElementById('year-hours');
-yearHours.textContent = yearHoursText;
-
-const yearMinutesText = `${timeToYearEnd.minutes}`
-const yearMinutes = document.getElementById('year-minutes');
-yearMinutes.textContent = yearMinutesText;
-
-const yearSecondsText = `${timeToYearEnd.seconds}`
-const yearSeconds = document.getElementById('year-seconds');
-yearSeconds.textContent = yearSecondsText;
+setInterval(updateDateTime, 1000);
