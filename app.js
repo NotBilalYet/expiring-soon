@@ -23,7 +23,7 @@ function getCurrentDate() {
     const monthName = monthNames[date.getMonth()];
 
     const dayNumber = date.getDate();
-    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const dayName = dayNames[date.getDay()];
 
     return {
@@ -126,11 +126,11 @@ function timeToYearEndTotal() {
 const timeToYearEnd = timeToYearEndTotal();
 console.log(`Time to year end: ${timeToYearEnd.months} full months, ${timeToYearEnd.days} total days, ${timeToYearEnd.hours} total hours, ${timeToYearEnd.minutes} total minutes, ${timeToYearEnd.seconds} total seconds`);
 
-const todayButton = `${currentDate.dayNumber}.${currentDate.monthNumber}.${currentDate.year}`
+const todayButton = `${currentDate.dayName.toUpperCase()} ${currentDate.dayNumber}.${currentDate.monthNumber}.${currentDate.year}`
 const button1 = document.getElementById('todayButton');
 button1.textContent = todayButton;
 
-const monthButton = `${currentDate.monthName}`
+const monthButton = `${currentDate.monthName.toUpperCase()}`
 const button2 = document.getElementById('monthButton');
 button2.textContent = monthButton;
 
